@@ -43,13 +43,20 @@ public class ContactController : Controller
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateContact(Guid id, Contact contact)
     {
+        if (contact == null || id != contact.Id)
+        {
+            return BadRequest(); // Solicitação inválida
+        }
+
         var updatedContact = await _contactService.UpdateContactAsync(id, contact);
         if (updatedContact == null)
         {
-            return NotFound();
+            return NotFound(); // Contato não encontrado
         }
+
         return Ok(updatedContact);
     }
+
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteContact(Guid id)

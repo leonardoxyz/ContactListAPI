@@ -36,15 +36,18 @@ namespace volxyseat.Domain.Services
             return contact;
         }
 
-        public async Task<Contact> UpdateContactAsync(Guid id, Contact contact)
+        public async Task<Contact> UpdateContactAsync(Guid id, Contact updatedContact)
         {
             var existingContact = await _contactRepository.GetByIdAsync(id);
             if (existingContact == null)
             {
-                return null; // Contato não encontrado
+                return null;
             }
 
-            existingContact.Name = contact.Name;
+            existingContact.Name = updatedContact.Name;
+            existingContact.Email = updatedContact.Email;
+            existingContact.Phone = updatedContact.Phone;
+
             await _contactRepository.UpdateAsync(existingContact);
             await _unityOfWork.SaveChangesAsync();
             return existingContact;
