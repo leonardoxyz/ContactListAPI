@@ -29,11 +29,11 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
 
 Agora que a aplicação está em execução, você pode começar a usar a API para gerenciar livros, bibliotecas e endereços. Aqui estão algumas das principais rotas disponíveis:
 
-- `GET /todoitems`: Retorna todos as taks cadastradas.
-- `GET /todoitems/{id}`: Retorna uma taks específica pelo ID.
-- `POST /todoitems`: Cria uma nova taks.
-- `PUT /todoitems/{id}`: Atualiza uma taks existente pelo ID.
-- `DELETE /todoitems/{id}`: Exclui uma taks pelo ID.
+- `GET api/controller`: Retorna todos as taks cadastradas.
+- `GET api/controller/{id}`: Retorna uma taks específica pelo ID.
+- `POST api/controller`: Cria uma nova taks.
+- `PUT api/controller/{id}`: Atualiza uma taks existente pelo ID.
+- `DELETE api/controller/{id}`: Exclui uma taks pelo ID.
 
 Certifique-se de usar o Postman ou outra ferramenta semelhante para fazer solicitações à API.
 
